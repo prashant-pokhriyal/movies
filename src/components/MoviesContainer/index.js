@@ -5,7 +5,7 @@ import tmdb from './../../services/tmdb';
 import './index.scss';
 
 export default function MoviesContainer(props) {
-    let api = tmdb('2f7ae9a74799d3d34722ebd4a473c5da');
+    let api = tmdb(process.env.REACT_APP_API_KEY);
     const [collections, setCollections] = useState([]);
     const [page, setPage] = useState({});
     const [showModal, setShowModal] = useState(false);
