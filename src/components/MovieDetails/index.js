@@ -65,7 +65,7 @@ export default function MovieDetails(props) {
                                                 }
                                             </div>
                                             <div className="flex flex-wrap pt-2">
-                                                <p className="text-sm text-gray-500">{props.details.overview}</p>
+                                                <p className="text-sm text-gray-500 text-justify">{props.details.overview}</p>
                                             </div>
                                             <div className="flex flex-wrap pt-2 items-center">
                                                 {/* <p className="text-sm text-gray-500">{props.details?.credits?.cast?.map(actor => actor.name)?.join(',')}</p> */}
