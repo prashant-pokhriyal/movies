@@ -1,8 +1,10 @@
 import React from 'react';
+import StarRatings from 'react-star-ratings';
 
 export default function MovieDetails(props) {
     const directors = props.details?.credits?.crew
         ?.filter(person => person.job === 'Director');
+    const rating = 5 * (props.details.vote_average / 10);
     return (
         <>
             {props.showModal ? (
@@ -40,7 +42,15 @@ export default function MovieDetails(props) {
                                                     {props.details.title}
                                                 </h1>
                                                 <div className="text-xl font-semibold text-gray-500">
-                                                    {props.details.vote_average}
+                                                <StarRatings
+                                                    rating={rating}
+                                                    starDimension="30px"
+                                                    starSpacing="5px"
+                                                    starRatedColor="#FF9529"
+                                                    numberOfStars={5}
+                                                    name='rating'
+                                                />
+                                                    {/* {props.details.vote_average} */}
                                                 </div>
                                             </div>
                                             <div className="flex flex-wrap border-b border-solid border-gray-300">
@@ -59,7 +69,7 @@ export default function MovieDetails(props) {
                                             </div>
                                             <div className="flex flex-wrap pt-2 items-center">
                                                 {/* <p className="text-sm text-gray-500">{props.details?.credits?.cast?.map(actor => actor.name)?.join(',')}</p> */}
-                                                <label>Cast</label>
+                                                <p className="w-full py-2 font-semibold">Cast</p>
                                                 {
                                                     props.details?.credits?.cast?.sort((actor1, actor2) => actor2.popularity - actor1.popularity)?.slice(0, 2)?.map((actor, index) => (
                                                         <p key={index} className="flex items-center p-1">
