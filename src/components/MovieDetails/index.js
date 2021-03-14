@@ -14,23 +14,7 @@ export default function MovieDetails(props) {
                         onClick={() => props.setShowModal(false)}
                     >
                         <div className="relative w-auto my-6 mx-auto max-w-4xl">
-                            {/*content*/}
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                                {/*header*/}
-                                {/* <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
-                                    <h3 className="text-3xl font-semibold">
-                                        {props.details.title}
-                                    </h3>
-                                    <button
-                                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                                        onClick={() => props.setShowModal(false)}
-                                    >
-                                        <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                            ×
-                      </span>
-                                    </button>
-                                </div> */}
-                                {/*body*/}
                                 <div className="relative p-6 flex-auto">
                                     <div className="flex">
                                         <div className="flex-none w-64 h-96 relative">
@@ -42,14 +26,14 @@ export default function MovieDetails(props) {
                                                     {props.details.title}
                                                 </h1>
                                                 <div className="text-xl font-semibold text-gray-500">
-                                                <StarRatings
-                                                    rating={rating}
-                                                    starDimension="30px"
-                                                    starSpacing="5px"
-                                                    starRatedColor="#FF9529"
-                                                    numberOfStars={5}
-                                                    name='rating'
-                                                />
+                                                    <StarRatings
+                                                        rating={rating}
+                                                        starDimension="30px"
+                                                        starSpacing="5px"
+                                                        starRatedColor="#FF9529"
+                                                        numberOfStars={5}
+                                                        name='rating'
+                                                    />
                                                     {/* {props.details.vote_average} */}
                                                 </div>
                                             </div>
@@ -82,7 +66,6 @@ export default function MovieDetails(props) {
                                         </form>
                                     </div>
                                 </div>
-                                {/*footer*/}
                                 <div className="flex items-center justify-end p-2 border-t border-solid border-gray-300 rounded-b">
                                     <button
                                         className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
